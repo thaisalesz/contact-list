@@ -15,8 +15,8 @@ CREATE TABLE "Client" (
 CREATE TABLE "Contact" (
     "id" TEXT NOT NULL,
     "name" VARCHAR(100) NOT NULL,
-    "email" VARCHAR(30) NOT NULL,
-    "phone" VARCHAR(14) NOT NULL,
+    "email" VARCHAR(30),
+    "phone" VARCHAR(14),
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "clientId" TEXT NOT NULL,
