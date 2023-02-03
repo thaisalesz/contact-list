@@ -15,7 +15,7 @@ const createClientController = async (req:Request, res: Response):Promise<Respon
 }
 
 const listAllClientsController = async (req:Request, res: Response):Promise<Response> => {
-    const clients:IClient[] = await listAllClientsService()
+    const clients:Omit<IClient, "password">[] = await listAllClientsService()
     return res.status(200).json(clients)
 }
 
@@ -39,7 +39,7 @@ const deleteClientController = async (req:Request, res: Response):Promise<Respon
     const clientId:string = req.params.id
     
     await deleteClientService(clientId)
-    return res.status(200).send()
+    return res.status(204).send()
 }
 
 
